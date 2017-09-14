@@ -2,7 +2,7 @@
 	'use strict'
 	
 	var app = angular.module("crudApp");
-	app.controller("loginCtrl" , ["$scope","$window","$location","loginService","$sessionStorage","$timeout",function($scope,$window,$location,loginService,$sessionStorage,$timeout){
+	app.controller("loginCtrl" , ["$scope","$window","$location","loginService","$sessionStorage","$timeout","$rootScope",function($scope,$window,$location,loginService,$sessionStorage,$timeout,$rootScope){
 		$scope.user={
 	               
 				                userId:"",
@@ -20,17 +20,18 @@
 					         useremail : data.email,
 					         userpassword : data.password
 				       };	
+					$rootScope.afterLogin = true;
 				}
 				 $timeout(function () {
 					 $scope.statusMessage ="";
 					 console.log("in time",$scope.statusMessage);
 					 }, 3000);
-		
 			});	
 		}
 		
 		$scope.logout = function () {
 	        delete $sessionStorage.users;
+	        $rootScope.afterLogin = false;
 	        $window.location.href = '#/home.html';
 	        };
 		

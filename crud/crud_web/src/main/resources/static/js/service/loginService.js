@@ -17,7 +17,7 @@
 			   };
 			   var data = angular.toJson(user);
 			   console.log(data);
-			    $http.post('http://localhost:8082/crud-controller/rest/user', data, config).success(
+			    $http.post('http://localhost:8082/crud-controller/rest/user/login', data, config).success(
 			    function(data, status, headers, config) {
 			    	deferred.resolve(data);
 			    	if(status == '200'){

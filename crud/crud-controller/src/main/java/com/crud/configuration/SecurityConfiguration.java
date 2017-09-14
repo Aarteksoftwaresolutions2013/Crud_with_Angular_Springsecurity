@@ -26,8 +26,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.httpBasic().and().authorizeRequests()
+						.antMatchers("/rest/user/login").permitAll()
 						.antMatchers("/rest/user/**").hasRole("USER")
 						.antMatchers("/rest/admin/**").hasRole("ADMIN")
-						.and().csrf().disable().headers().frameOptions().disable();
+						.and().csrf().disable().headers().frameOptions().disable()
+						.and().exceptionHandling().accessDeniedPage("/accessDenied");
 	}
 }

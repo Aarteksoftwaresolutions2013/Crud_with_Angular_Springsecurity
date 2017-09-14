@@ -8,6 +8,10 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,7 +39,7 @@ public class UserController {
      *  @param user This object hold the user object.
      *  @return {@link ResponseEntity}
      * */
-	@RequestMapping(value = "/rest/user", method = RequestMethod.POST)
+	@RequestMapping(value = "/rest/user/login", method = RequestMethod.POST)
 	public ResponseEntity login(@RequestBody Users user){
 		try{
 			Users validUser = userService.findByEmailAndPassword(user);
@@ -64,6 +68,27 @@ public class UserController {
 				return new ResponseEntity<List<Users>>(userList,HttpStatus.OK);
 			else
 			   return new ResponseEntity<List<Users>>(HttpStatus.NO_CONTENT);
+	}
+	
+	@RequestMapping("/accessDenied")
+	public ResponseEntity<Map<String,String>> accessDeniedPage(){
+		Map<String,String> map = new LinkedHashMap<String, String>();
+		map.put("user_name",getGrantedAuthority());
+		map.put("message","you are not authorize to access this url");
+		
+		return new ResponseEntity<Map<String,String>>(map,HttpStatus.UNAUTHORIZED);
+	}
+	
+	public String getGrantedAuthority(){
+		  String userName = null;
+	        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+	 
+	        if (principal instanceof UserDetails) {
+	        	userName = ((UserDetails)principal).getUsername();
+	        } else {
+	            userName = principal.toString();
+	        }
+	        return userName;
 	}
 
 }

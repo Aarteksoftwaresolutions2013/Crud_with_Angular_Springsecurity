@@ -29,8 +29,8 @@
 <!-- header section start -->
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="#login">Login</a>
-  <a href="#registration">Register</a>
+  <a ng-if="!afterLogin" href="#login">Login</a>
+  <!-- <a href="#registration">Register</a> -->
 </div>
 <!-- header section end -->
 <div class="container">
