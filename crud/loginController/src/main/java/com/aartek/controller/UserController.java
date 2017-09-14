@@ -1,4 +1,4 @@
-package com.crud.controller;
+package com.aartek.controller;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.crud.model.Users;
-import com.crud.service.UserService;
+import com.aartek.model.Users;
+import com.aartek.service.UserService;
 
 
 /**

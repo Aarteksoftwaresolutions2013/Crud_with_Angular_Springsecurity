@@ -1,4 +1,4 @@
-package com.crud.configuration;
+package com.aartek.configuration;
 
 import java.io.IOException;
 

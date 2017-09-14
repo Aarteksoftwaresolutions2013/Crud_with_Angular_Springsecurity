@@ -1,13 +1,13 @@
-package com.crud.serviceImpl;
+package com.aartek.serviceImpl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.crud.model.Users;
-import com.crud.repository.UserRepository;
-import com.crud.service.UserService;
+import com.aartek.model.Users;
+import com.aartek.repository.UserRepository;
+import com.aartek.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{

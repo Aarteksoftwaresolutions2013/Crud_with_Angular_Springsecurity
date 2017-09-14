@@ -1,8 +1,8 @@
-package com.crud.service;
+package com.aartek.service;
 
 import java.util.List;
 
-import com.crud.model.Users;
+import com.aartek.model.Users;
 
 public interface UserService {
 	

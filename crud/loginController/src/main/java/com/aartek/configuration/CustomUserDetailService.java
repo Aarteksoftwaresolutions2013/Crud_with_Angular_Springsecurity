@@ -1,4 +1,4 @@
-package com.crud.configuration;
+package com.aartek.configuration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.crud.model.Users;
-import com.crud.service.UserService;
+import com.aartek.model.Users;
+import com.aartek.service.UserService;
 
 @Service("customUserDetailsService")
 public class CustomUserDetailService implements UserDetailsService{

@@ -1,10 +1,11 @@
-package com.crud.configuration;
+package com.aartek.configuration;
 
 import java.util.Properties;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -20,10 +21,11 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.crud", entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager")
+@EnableJpaRepositories(basePackages = "com.aartek", entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager")
 @EnableTransactionManagement
 @PropertySource({ "classpath:application.properties" })
 public class JpaConfiguration {
+	private static final Logger logger = Logger.getLogger(JpaConfiguration.class);
 	@Value("${spring.datasource.dbcp.driver-class-name}")
 	private String dbDriver;
 
@@ -45,7 +47,7 @@ public class JpaConfiguration {
 	@Value("${spring.jpa.hibernate.ddl-auto}")
 	private String hibernateHbm2ddlAuto;
 
-	private String entityManagerPackageScan = "com.crud.model";
+	private String entityManagerPackageScan = "com.aartek.model";
 
 	@Bean
 	public DataSource dataSource() {
@@ -56,7 +58,7 @@ public class JpaConfiguration {
 		try {
 			dataSource.setPassword(dbPassword);
 		} catch (Exception e) {
-			System.out.println(e);
+			logger.error(e);
 		}
 		return dataSource;
 	}

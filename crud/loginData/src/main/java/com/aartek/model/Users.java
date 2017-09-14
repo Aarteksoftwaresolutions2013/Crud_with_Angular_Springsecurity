@@ -1,4 +1,4 @@
-package com.crud.model;
+package com.aartek.model;
 
 import java.util.Set;
 
