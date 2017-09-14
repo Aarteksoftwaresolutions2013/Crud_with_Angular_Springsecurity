@@ -4,15 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.crud</groupId>
-		<artifactId>crud</artifactId>
+		<groupId>com.aartek.login</groupId>
+		<artifactId>login</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.crud</groupId>
-	<artifactId>crud-controller</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>loginController</artifactId>
 	<packaging>war</packaging>
-	<name>crud-controller Maven Webapp</name>
+	<name>loginController Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -23,8 +21,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.crud</groupId>
-			<artifactId>crud-service</artifactId>
+			<groupId>com.aartek.login</groupId>
+			<artifactId>loginService</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -59,13 +57,6 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.13</version>
 		</dependency>
-
-
-
-		<!-- To resolve the issue of 406 Response Code -->
-
-
-
 
 		<dependency>
 			<groupId>junit</groupId>
@@ -128,26 +119,8 @@
             <version>1.4.3.RELEASE</version>
         </dependency>
 
-
-
-<!--   <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>4.2.3.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>4.2.3.RELEASE</version>
-        </dependency>
-          <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
-            <version>4.2.3.RELEASE</version>
-        </dependency> -->
-
 	</dependencies>
 	<build>
-		<finalName>crud-controller</finalName>
+		<finalName>loginController</finalName>
 	</build>
 </project>

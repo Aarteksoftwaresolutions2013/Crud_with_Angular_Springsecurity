@@ -3,15 +3,13 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.crud</groupId>
-    <artifactId>crud</artifactId>
+    <groupId>com.aartek.login</groupId>
+    <artifactId>login</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.crud</groupId>
-  <artifactId>crud_web</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <artifactId>loginWeb</artifactId>
   <packaging>war</packaging>
-  <name>crud_web Maven Webapp</name>
+  <name>login web Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -21,8 +19,8 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-     <groupId>com.crud</groupId>
-    <artifactId>crud-service</artifactId>
+     <groupId>com.aartek.login</groupId>
+    <artifactId>loginService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     </dependency>
     
@@ -76,6 +74,6 @@
 		</dependency>
   </dependencies>
   <build>
-    <finalName>crud_web</finalName>
+    <finalName>loginWeb</finalName>
   </build>
 </project>
